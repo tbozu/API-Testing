@@ -1,0 +1,14 @@
+<suite name="RegressionSuite">
+    <test name="Functionality Test">
+        <classes>
+            <class name="testRestAssured.testRestAssured">
+                <methods>
+                    <include name="createBoard"/>
+                    <include name="getIdBoard"/>
+                    <include name="updateBoard"/>
+                    <include name="deleteBoard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
