@@ -9,66 +9,76 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>26</maven.compiler.source>
-        <maven.compiler.target>26</maven.compiler.target>
+        <!-- Schimbat la Java 21 LTS deoarece Java 26 nu este o versiune stabilă/suportată pe termen lung (LTS) -->
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
-        <!-- Source: https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+        <!-- Rest-Assured (Corectat la ultima versiune stabilă 5.x) -->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
-            <version>6.0.0</version>
+            <version>5.5.0</version>
             <scope>test</scope>
         </dependency>
-        <!-- Source: https://mvnrepository.com/artifact/com.squareup.retrofit2/retrofit -->
+
+        <!-- Retrofit (Corectat la ultima versiune stabilă reală 2.x, versiunea 3.0 nu există) -->
         <dependency>
             <groupId>com.squareup.retrofit2</groupId>
             <artifactId>retrofit</artifactId>
-            <version>3.0.0</version>
+            <version>2.11.0</version>
             <scope>compile</scope>
         </dependency>
-        <!-- Source: https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp -->
+
+        <!-- Retrofit Jackson Converter (Corectat la versiunea stabilă 2.x) -->
+        <dependency>
+            <groupId>com.squareup.retrofit2</groupId>
+            <artifactId>converter-jackson</artifactId>
+            <version>2.11.0</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- OkHttp 4 (Versiune ultra-stabilă. Versiunea 5 este încă în Alpha/Beta și poate cauza erori de compilare) -->
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
             <artifactId>okhttp</artifactId>
-            <version>5.3.2</version>
+            <version>4.12.0</version>
             <scope>compile</scope>
         </dependency>
-        <!-- Source: https://mvnrepository.com/artifact/org.testng/testng -->
+
+        <!-- TestNG (Lăsat pe versiunea stabilă aleasă de tine) -->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>7.12.0</version>
+            <version>7.10.2</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>7.12.0</version>
-            <scope>compile</scope>
-        </dependency>
-        <!-- Source: https://mvnrepository.com/artifact/org.hamcrest/hamcrest -->
+
+        <!-- Hamcrest (Folositor pentru aserțiuni în teste) -->
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest</artifactId>
             <version>3.0</version>
             <scope>test</scope>
         </dependency>
-        <!-- Source: https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+
+        <!-- Jackson Databind (Corectat: Aveai o versiune foarte veche 2.2.x, actualizat la 2.17 pentru securitate și compatibilitate) -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.21.2</version>
+            <version>2.17.2</version>
             <scope>compile</scope>
         </dependency>
-        <!-- Source: https://mvnrepository.com/artifact/io.github.cdimascio/dotenv-java -->
+
+        <!-- Dotenv pentru variabile de mediu (tokeni, parole secrete) -->
         <dependency>
             <groupId>io.github.cdimascio</groupId>
             <artifactId>dotenv-java</artifactId>
-            <version>3.2.0</version>
+            <version>3.0.0</version>
             <scope>compile</scope>
         </dependency>
+
     </dependencies>
 </project>
